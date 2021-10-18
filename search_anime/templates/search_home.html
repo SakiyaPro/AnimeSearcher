@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>観たいアニメを見つけるサイト！</title>
+    <link rel="shortcut icon" href={% static 'img/favicon2.png' %}>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <form method="get" action="#" class="search_container">
+            <input type="text" size="" placeholder="観たいアニメを検索！">
+            <input type="submit" value="&#xf002">
+        </form>
+    </header>
+    <main>
+        <section id="genre-content">
+            <h2>Q. あなたが観たいアニメジャンルを教えて下さい。</h2>
+            <ul class="flex-genre">
+                <li>
+                    <a href="genre_search/Kandou/">
+                        <img src="../static/img/ジャンル(感動).jpg" alt="感動">
+                        <h3>感動</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../static/img/ジャンル(ギャグ・日常).jpg" alt="ギャグ・日常">
+                        <h3>日常</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../static/img/ジャンル(SF).png" alt="SF">
+                        <h3>SF</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../static/img/ジャンル(バトル).jpg" alt="バトル">
+                        <h3>バトル</h3>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
