@@ -2,33 +2,35 @@
 import sqlite3
 
 
+SQLITE_PATH = r"C:\Users\sakit\Desktop\my_portfolio\anime_searcher\db\db.sqlite3"
+
 # anime_dbにデータを追加する関数
+
+
 def insert_sqlite(title, star, story, img_path):
     # dbの作成
     # 既に存在している場合はアクセスされる
-    sqlite_path = "db.sqlite3"
-    connection = sqlite3.connect(sqlite_path)
+    connection = sqlite3.connect(SQLITE_PATH)
 
     # cursorの作成
     cursor = connection.cursor()
 
     # 値の追加
     cursor.execute('INSERT INTO anime_db (title, star, story, img_path) VALUES (?, ?, ?, ?))',
-                    (title, star, story, img_path))
+                   (title, star, story, img_path))
     connection.commit()
     connection.close()
     print("finish insert!")
 
 
 # anime_dbのデータを更新する関数
-def update_sqlite(title=None, star=None, story=None, img_path=None, *, id):
+def update_sqlite(title=None, star=None, story=None, img_path=None, tag=None, *, id):
     '''
     idは必ず指定する。(どのレコードを編集するか判別するため)
     '''
     # dbの作成
     # 既に存在している場合はアクセスされる
-    sqlite_path = "db.sqlite3"
-    connection = sqlite3.connect(sqlite_path)
+    connection = sqlite3.connect(SQLITE_PATH)
 
     # cursorの作成
     cursor = connection.cursor()
@@ -43,6 +45,9 @@ def update_sqlite(title=None, star=None, story=None, img_path=None, *, id):
     if img_path:
         cursor.execute(
             f'UPDATE anime_db SET img_path=? WHERE id=?', (img_path, id))
+    if tag:
+        cursor.execute(
+            f'UPDATE anime_db SET tag=? WHERE id=?', (tag, id))
     connection.commit()
     connection.close()
     print("finish update!")
@@ -51,15 +56,19 @@ def update_sqlite(title=None, star=None, story=None, img_path=None, *, id):
 def main():
     # dbテーブルの作成。一回しか使わないのでコメントアウト。
     # 既に存在している場合は「"table anime_db already exists!"」を出力
-    """ try:
+    connection = sqlite3.connect(SQLITE_PATH)
+
+    # cursorの作成
+    cursor = connection.cursor()
+    try:
         cursor.execute(
             'CREATE TABLE anime_db(id INTEGER PRIMARY KEY AUTOINCREMENT, title STRING, star REAL, story STRING, img_path STRING)'
         )
-    except sqlite3.OperationalError:
-        print("table anime_db already exists!") """
+        print("table anime_db already exists!")
 
-    update_sqlite(
-        id=4, title="一週間フレンズ")
+    """ cursor.execute("DROP TABLE anime_tag")
+    connection.commit()
+    connection.close() """
 
 
 if __name__ == "__main__":

@@ -9,6 +9,10 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+main {
+    padding-top: 50px;
+}
+
 img {
     max-width: 100%;
 }
@@ -26,10 +30,23 @@ Header
 ============================== */
 
 #header {
+    flex-direction: column;
     font-family: 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-    margin-bottom: 50px;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 20px 0;
+}
+
+#header .flex-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .flex-item li {
+    padding-right: 70px;
+}
+#header .flex-item:nth-child(n+1) {
+    color: #fff;
 }
 
 #header .search_container {
@@ -66,7 +83,7 @@ Header
 }
 
 /* ===============================
-ジャンルコンテンツ
+アニメジャンルの表示(search_home.html)
 ================================ */
 
 #genre-content {
@@ -146,4 +163,48 @@ Header
         opacity: 0.7;
     }
     /*アニメーション終了時は不透明度100%*/
+}
+
+/* ===============================
+アニメコンテンツの表示 (genre_search.html)
+================================ */
+
+.genre-title {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: antiquewhite;
+    color: rgb(208, 238, 98);
+    filter: drop-shadow(0 0 0.75rem rgb(208, 238, 98));
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.horizontal-list {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.line-box {
+    padding: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.6);
+    border-radius: 2%;
+}
+
+.horizontal-item {
+	font-size: 1rem;
+    background-color: #fff;
+    border-radius: 1%;
+}
+
+.horizontal-item .flex-content {
+    display: flex;
+}
+
+.horizontal-item img {
+    width: 450px;
+    height: 300px;
+}
+
+.horizontal-item .hide-content {
+    display: none;
 }

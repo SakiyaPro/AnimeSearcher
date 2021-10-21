@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>観たいアニメを見つけるサイト！</title>
-    <link rel="shortcut icon" href={% static 'img/favicon2.png' %}>
+    <link rel="shortcut icon" href="{% static 'img/favicon2.png' %}">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link
@@ -18,10 +18,16 @@
 
 <body>
     <header id="header">
-        <form method="get" action="#" class="search_container">
-            <input type="text" size="" placeholder="観たいアニメを検索！">
-            <input type="submit" value="&#xf002">
-        </form>
+        <ul class="flex-item">
+            <li>
+                <form method="get" action="#" class="search_container">
+                    <input type="text" size="" placeholder="観たいアニメを検索！">
+                    <input type="submit" value="&#xf002">
+                </form>
+            </li>
+            <li><a href="#">お気に入りアニメ</a></li>
+            <li><a href="#">ログイン</a></li>
+        </ul>
     </header>
     <main>
         <section id="genre-content">
