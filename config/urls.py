@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 import search_anime.views
-import cart.views
 
 
 urlpatterns = [
@@ -27,9 +26,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     path('', search_anime.views.search_home, name='search_home'),
-    path('genre_search/<genre>/',
-        search_anime.views.genre_search, name="genre_search"),
-    
+    path('search_anime/', include('search_anime.urls')),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
