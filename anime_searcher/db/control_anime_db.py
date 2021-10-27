@@ -64,6 +64,7 @@ def main():
         cursor.execute(
             'CREATE TABLE anime_db(id INTEGER PRIMARY KEY AUTOINCREMENT, title STRING, star REAL, story STRING, img_path STRING)'
         )
+    except:
         print("table anime_db already exists!")
 
     """ cursor.execute("DROP TABLE anime_tag")

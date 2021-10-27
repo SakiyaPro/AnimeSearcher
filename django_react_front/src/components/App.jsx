@@ -1,10 +1,21 @@
 import React from "react";
+import "../App.css";
+import { Header } from "./Header";
+import { Search } from "./Search";
+import { Genre } from "./Genre";
 
-const App = () => {
-  return (
-    <div>
-      <p>React here!</p>
-    </div>
-  );
+//apiを取得したらreturnのSearchタグの{}はsearch(小文字)に変更
+
+export const App = () => {
+    return (
+        <>
+            <Header
+                headertext={"AnimeSearcher"}
+            />
+            <Search
+            />
+            <Genre
+            />
+        </>
+    );
 };
-export default App;

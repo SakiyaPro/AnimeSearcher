@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # app
     'search_anime',
     'accounts',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
