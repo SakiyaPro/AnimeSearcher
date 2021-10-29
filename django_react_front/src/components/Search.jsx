@@ -26,7 +26,7 @@ export const Search = (props) => {
           type="text"
           placeholder="アニメタイトルを検索！"
         />
-        <input onClick={callSearchFunction} type="submit" disabled value="SEARCH" />
+        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
       </form>
     );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../App.scss";
 import { Header } from "./Header";
 import { Search } from "./Search";
 import { Genre } from "./Genre";
